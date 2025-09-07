@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligent Q&A System</title>
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            background-image: linear-gradient(
+              rgba(0,0,0,0.3),
+              rgba(0,0,0,0.3)
+             ),
+            url("IMG_20250906_174250.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-attachment: fixed;
+             /* Initial gradient */
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://as1.ftcdn.net/jpg/07/33/29/18/1000_F_733291863_IEkBud2TkSWNN4N27RwiRZGy451pl40z.jpg') no-repeat center center/cover;
+            filter: brightness(0.6); /* Darken the image a bit */
+            z-index: -1;
+            animation: panBackground 20s infinite alternate linear;
+        }
+
+        @keyframes panBackground {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1); /* Slight zoom for animation */
+            }
+        }
+
+        .hero-content {
+            z-index: 1;
+            animation: fadeInScale 1.5s ease-out;
+        }
+
+        .hero-content h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        button {
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 86, 179, 0.3);
+        }
+
+        </style>
+</head>
+<body>
+  <section class="hero-section">
+        <div class="hero-content">
+            <h2>Unlock Insights from Your Documents</h2>
+            <p>Our Intelligent Q&A System helps you quickly find answers within your PDFs, Markdown, and HTML files. Get ready to explore!</p>
+            <button onclick="document.getElementById('qa-system-section').scrollIntoView({ behavior: 'smooth' });">Get Started</button>
+        </div>
+    </section>
+
+    <section id="qa-system-section" style="background-attachment: fixed;">
+
+       <h1>Intelligent Document Q&amp;A System</h1>
+       <h2 style="text-align: center;">Core Functionalities</h2>
+      <table style="column-width: 50vb;">
+        <tr">
+          <td>
+            <h3>Ask Smarter. Learn Faster. Work Better.</h3>
+            <p>
+            Our RAG-powered Q&amp;A system lets you upload your documents and instantly get contextual.
+            Whether you're a <strong>student</strong>, an <strong>employee</strong>, or a <strong>customer</strong> 
+            exploring product manuals,you find the information you need in seconds.
+            </p> 
+          </td>
+          <td>
+            <h3>📄 Document Ingestion</h3>
+            <p>Easily upload:</p>
+            <ul>
+            <li>PDFs</li>
+            <li>Notion exports (Markdown, HTML)</li>
+            <li>Wiki pages (Markdown, HTML, or direct URL scrape)</li>
+            </ul>
+            <p>We extract <strong>clean, structured text</strong> and handle <strong>large, multi-page documents</strong> seamlessly.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+    <h3>🤖 Retrieval-Augmented Generation (RAG)</h3>
+  <p>When you ask a question:</p>
+  <ol>
+    <li>Your query is turned into an embedding</li>
+    <li>The system retrieves the <strong>most relevant document chunks</strong></li>
+    <li>These chunks + your question are sent to an <strong>LLM</strong> (like GPT-4, Claude, or Mistral)</li>
+    <li>The LLM generates a clear, contextual answer</li>
+  </ol>
+  <p>✅ Answers can also include <strong>citations and source references</strong>.</p>
+
+          </td>
+
+          <td>
+
+              <h3>💬 Answer Interface</h3>
+  <p>With our user-friendly interface, you can:</p>
+  <ul>
+    <li>Upload or select documents</li>
+    <li>Ask questions in natural language</li>
+    <li>View answers along with supporting references</li>
+  </ul>
+  <p>Extra features:</p>
+  <ul>
+    <li>Follow-up questions with <strong>chat history</strong></li>
+    <li><strong>Highlighted text</strong> showing where the answer came from</li>
+    <li>Export Q&amp;A sessions to <strong>PDF or Markdown</strong></li>
+  </ul>
+          </td>
+        </tr>
+      </table>
+<br>
+<hr>
+<a style="text-align: center;"  href="https://adb35ad7fdea.ngrok-free.app/" name="gobutton"> visit Our working page</a>
+<hr>
+<br>
+
+  <h2>Example Workflow</h2>
+  <p><strong>User Uploads</strong>: <em>Machine Learning for Beginners (PDF)</em></p>
+  <p><strong>User Question</strong>: “What is the difference between supervised and unsupervised learning?”</p>
+
+  <p><strong>System Answer</strong>:<br>
+    Supervised learning uses <strong>labeled data</strong> and trains models with input-output pairs. 
+    Unsupervised learning works with <strong>unlabeled data</strong>, discovering hidden patterns or clusters.
+  </p>
+  <p>📖 <em>Source: Page 4, paragraph starting with ‘There are two main types of ML…’</em></p>
+
+  <p><strong>⚡ Result</strong>: Instantly get reliable, reference-backed answers—without manual searching.</p>
+
+      
+    </section>
+</body>
+</html>
