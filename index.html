@@ -10,9 +10,14 @@
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
-            background-color: #f4f7f6;
-            color: #333;
+            /* background-color: #f4f7f6; */
+            color: #131111;
             overflow-x: hidden;
+            /* font-size: large; */
+            font-weight: bold;
+             background: url('https://thumbs.dreamstime.com/b/questions-wallpaper-directions-furthering-expanding-knowledge-both-questioner-respondent-generative-ai-design-325228775.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            background-blend-mode: lighten;
         }
 
         /* Animated Background Section */
@@ -25,14 +30,7 @@
             text-align: center;
             color: white;
             overflow: hidden;
-            background-image: linear-gradient(
-              rgba(0,0,0,0.3),
-              rgba(0,0,0,0.3)
-             ),
-            url("IMG_20250906_174250.jpg");
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-            background-attachment: fixed;
+           
              /* Initial gradient */
         }
 
@@ -44,6 +42,7 @@
             width: 100%;
             height: 100%;
             background: url('https://as1.ftcdn.net/jpg/07/33/29/18/1000_F_733291863_IEkBud2TkSWNN4N27RwiRZGy451pl40z.jpg') no-repeat center center/cover;
+            
             filter: brightness(0.6); /* Darken the image a bit */
             z-index: -1;
             animation: panBackground 20s infinite alternate linear;
@@ -66,14 +65,14 @@
         .hero-content h2 {
             font-size: 3em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 4px 3px 1px rgba(0,0,0,0.5);
         }
 
         .hero-content p {
             font-size: 1.2em;
             max-width: 600px;
             margin: 0 auto 30px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            text-shadow: 2px 2px 1px rgba(0,0,0,0.4);
         }
 
         @keyframes fadeInScale {
@@ -144,7 +143,47 @@
             transform: translateY(0);
             box-shadow: 0 2px 5px rgba(0, 86, 179, 0.3);
         }
+        .footer {
+          background: linear-gradient(135deg, #1f2937, #111827); /* gray gradient */
+          color: #ffffff;
+          padding: 24px 0;
+          margin-top: 40px;
+        }
 
+        .footer-container {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 0 24px;
+          text-align: center;
+          line-height: 1.6;
+        }
+
+        .footer p {
+          margin: 6px 0;
+          font-size: 14px;
+        }
+
+        .footer .note {
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.75);
+        }
+
+        .footer p:hover {
+          color: #38bdf8; /* Tailwind cyan-400 for hover effect */
+         transition: color 0.3s ease;
+        }
+
+      @media (max-width: 640px) {
+        .footer {
+          padding: 16px 0;
+        }
+        .footer p {
+          font-size: 13px;
+        }
+        .footer .note {
+          font-size: 11px;
+        }
+      }
         </style>
 </head>
 <body>
@@ -156,18 +195,20 @@
         </div>
     </section>
 
-    <section id="qa-system-section" style="background-attachment: fixed;">
+    <section id="qa-system-section">
 
-       <h1>Intelligent Document Q&amp;A System</h1>
+     
+
+       <h1 style="font-family: 'Roboto', Arial, sans-serif;font-weight: 700; font-size: 35px; text-shadow: 3px 3px 2px rgba(0,0,0,0.5);" >Intelligent Document Q&amp;A System</h1>
        <h2 style="text-align: center;">Core Functionalities</h2>
       <table style="column-width: 50vb;">
-        <tr">
-          <td>
+        <tr style="column-width: 50vb; column-gap: 20px;">
+          <td style="column-width: 50vb;">
             <h3>Ask Smarter. Learn Faster. Work Better.</h3>
             <p>
-            Our RAG-powered Q&amp;A system lets you upload your documents and instantly get contextual.
+            Our RAG-powered Q&amp;A system lets you upload your documents and instantly get contextual.<br>
             Whether you're a <strong>student</strong>, an <strong>employee</strong>, or a <strong>customer</strong> 
-            exploring product manuals,you find the information you need in seconds.
+            exploring product manuals,<br>you find the information you need in seconds.
             </p> 
           </td>
           <td>
@@ -213,12 +254,13 @@
           </td>
         </tr>
       </table>
-<br>
-<hr>
-<a style="text-align: center;"  href="https://adb35ad7fdea.ngrok-free.app/" name="gobutton"> visit Our working page</a>
-<hr>
-<br>
 
+<br>
+ <hr  >
+<button type="button" style="font-size: larger; font-style: normal;"> <a style="text-decoration: none;" href="https://5fb2cc4e8fe8.ngrok-free.app/">Way to our WORKING PAGE</a></button><br><br>
+<hr>
+    </section>
+    <section name="example" style="text-align: center;  font-weight: 500 ;" >
   <h2>Example Workflow</h2>
   <p><strong>User Uploads</strong>: <em>Machine Learning for Beginners (PDF)</em></p>
   <p><strong>User Question</strong>: “What is the difference between supervised and unsupervised learning?”</p>
@@ -233,5 +275,11 @@
 
       
     </section>
+
+    <footer class="footer">
+            
+                <p>&copy; 2023 Intelligent RAG Q&A System. Powered by HTML, CSS, JavaScript & TailwindCSS.</p>
+                <p class="mt-2 text-sm">Note: For production, backend APIs (e.g., OpenAI, FAISS) and server-side processing are required.</p>
+        </footer>
 </body>
 </html>
